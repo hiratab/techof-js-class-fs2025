@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Javascript</title>
+  <style>
+    h1 {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Aula 1 de Javascript</h1>
+  <p id="demo"></p>
+  <p id="firstName"></p>
+  <script src="js/index.js"></script>
+  <script>
+    // DOM => Document Object Model
+    console.log('Hello World')
+    document.getElementById('demo').innerText = 'Using javascript';
+    document.getElementById('demo').style.color = '#ababab';
+
+    // Variables
+    semUsarOTipoDaVariavel = 'Nao usar assim';
+    semUsarOTipoDaVariavel = 'Mudei o texto';
+    console.log('semUsarOTipoDaVariavel', semUsarOTipoDaVariavel)
+    
+    var age = 99;
+    var age = 100;
+    age = 123;
+    console.log('age', age);
+    
+    let number = null;
+    console.log('number 1', number);
+    number = 123;
+    console.log('number 2', number);
+
+    const isOpen = true;
+    console.log('isOpen', isOpen);
+
+    const obj = {
+      foo: 'lala'
+    };
+    console.log('obj', obj);
+
+    const firstName = 'firstName';
+    document.getElementById('firstName').innerText = firstName + ' ' + firstName;
+    const a = 10;
+    const b = 10;
+  </script>
+  <script>
+    semUsarOTipoDaVariavel = 'In another script';
+    console.log('semUsarOTipoDaVariavel', semUsarOTipoDaVariavel);
+
+    var age = 120;
+    console.log('age', age);
+
+    number = 120;
+    console.log('number', number);
+  </script>
+</body>
+
+</html>

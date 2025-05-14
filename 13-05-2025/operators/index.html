@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Operators</title>
+</head>
+
+<body>
+  <h1>Operators</h1>
+
+  <h3>Soma</h3>
+  <p id="soma"></p>
+  
+  <h3>Subtracao</h3>
+  <p id="subtracao"></p>
+  
+  <h3>Divisao</h3>
+  <p id="divisao"></p>
+  
+  <h3>Mod</h3>
+  <p id="mod"></p>
+  
+  <h3>Multiplicação</h3>
+  <p id="multiplicacao"></p>
+  
+  <h3>Exponenciação</h3>
+  <p id="exponenciacao"></p>
+  
+  <h3>Incremento</h3>
+  <p id="increment"></p>
+  
+  <h3>Decrement</h3>
+  <p id="decrement"></p>
+
+  <h3>Practice</h3>
+  <p id="practice"></p>
+
+  <script>
+    const a = 10;
+    const b = 40;
+    const soma = a + b;
+    console.log(typeof {})
+    document.getElementById("soma").innerText = 'A soma é: ' + soma;
+  </script>
+
+  <script>
+    const subtracao = b - a;
+    document.getElementById("subtracao").innerText = 'A subtração é: ' + subtracao;
+  </script>
+
+  <script>
+    const multiplicacao = b * a;
+    document.getElementById('multiplicacao').innerText = 'A Multiplicação é: ' + multiplicacao;
+  </script>
+
+  <script>
+    const exponenciacao = 2 ** 2;
+    document.getElementById('exponenciacao').innerText = 'A Exponenciação é: ' + exponenciacao;
+  </script>
+
+  <script>
+    const divisao = b / a;
+    document.getElementById('divisao').innerText = 'A divisão é: ' + divisao;
+  </script>
+
+  <script>
+    const mod = 12312344 % 10;
+    document.getElementById('mod').innerText = 'A Mod é: ' + mod;
+  </script>
+
+  <script>
+    let increment = 0;
+    increment++;
+    document.getElementById('increment').innerText = 'O Incremento é: ' + increment;
+  </script>
+
+  <script>
+    let decrement = 10;
+    decrement--;
+    document.getElementById('decrement').innerText = 'O decrement é: ' + decrement;
+  </script>
+
+
+  <script>
+    const x = 5;
+    const y = parseInt("5");
+
+    const result = x + y;
+    document.getElementById('practice').innerText = 'O result é: ' + result;
+  </script>
+</body>
+
+</html>

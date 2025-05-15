@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Input</title>
+  </head>
+
+  <body>
+    <h3>Soma</h3>
+    <p id="soma"></p>
+
+    <div>
+      <label for="x">X: </label>
+      <input id="x" type="number" name="x" value="0"/>
+    </div>
+
+    <div>
+      <label for="y">Y: </label>
+      <input id="y" type="text" inputmode="numeric" name="y" value="0"/>
+    </div>
+
+    <button onclick="sum()">Calculate</button>
+    <button onclick="_sum()">Calculate =></button>
+
+    <script>
+      function sum(parameters, parametros) {
+        const x = Number(document.getElementById("x").value)
+        const y = Number(document.getElementById("y").value)
+
+        const soma = x + y
+        document.getElementById("soma").innerText = soma
+      }
+      
+      const _sum = (parameters, parametros) => {
+        const x = Number(document.getElementById("x").value)
+        const y = Number(document.getElementById("y").value)
+
+        const soma = x + y
+        document.getElementById("soma").innerText = soma
+      }
+    </script>
+  </body>
+</html>

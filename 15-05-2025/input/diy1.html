@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DIY 1</title>
+
+  <style>
+    #details {
+      width: 10px;
+      height: 10px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <button onclick="enlarge()">Click Me</button>
+    <button onclick="reset()">Reset</button>
+  </div>
+  <div id="details" style="background-color: yellow; width: 10px; height: 10px;">
+
+  </div>
+
+  <script>
+    const reset = () => {
+      // document.getElementById("details").style = {
+      //   'background-color': 'yellow',
+      //   width: '10px',
+      //   height: '10px',
+      // } Object
+      document.getElementById("details").style.backgroundColor = 'yellow'
+      document.getElementById("details").style.width = '10px'
+      document.getElementById("details").style.height = '10px'
+    }
+
+    const enlarge = () => {
+      const currentWidth = parseInt(document.getElementById("details").style.width)
+      const newWidth = currentWidth + 10
+      document.getElementById("details").style.width = newWidth + 'px'
+      document.getElementById("details").style.height = newWidth + 'px'
+
+      // document.getElementById("details").style.backgroundColor = 'blue'
+      // if (parseInt(document.getElementById("details").style.width) >= 100) {
+      //   document.getElementById("details").style.backgroundColor = 'chocolate'
+      // }
+      // document.getElementById("details").style.backgroundColor = 'chocolate'
+      // if (parseInt(document.getElementById("details").style.width) < 100) {
+      //   document.getElementById("details").style.backgroundColor = 'blue'
+      // }
+      if (parseInt(document.getElementById("details").style.width) < 100) {
+        document.getElementById("details").style.backgroundColor = 'blue'
+      } else if (parseInt(document.getElementById("details").style.width) < 200) {
+        document.getElementById("details").style.backgroundColor = 'darkgreen'
+      } else if (parseInt(document.getElementById("details").style.width) < 300) {
+        document.getElementById("details").style.backgroundColor = 'darkgray'
+      } else {
+        document.getElementById("details").style.backgroundColor = 'chocolate'
+      }
+    }
+  </script>
+</body>
+
+</html>

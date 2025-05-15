@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Input</title>
+  </head>
+
+  <body>
+    <h3>Soma</h3>
+    <p id="soma"></p>
+
+    <script>
+      const x = Number(prompt("Coloque o primeiro numero"))
+      const y = Number(prompt("Coloque o segundo numero"))
+
+      const soma = x + y
+      console.log("soma", soma)
+
+      document.getElementById("soma").innerText = soma
+    </script>
+  </body>
+</html>

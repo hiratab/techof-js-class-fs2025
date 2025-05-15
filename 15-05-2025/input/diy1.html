@@ -58,8 +58,15 @@
       //   document.getElementById("details").style.backgroundColor = 'chocolate'
       // }
 
-      if (currentWidth >= 100 && currentWidth <= 200) {
+      document.getElementById("details").style.backgroundColor = 'blue'
+      console.log('currentWidth', currentWidth, '!currentWidth >= 100', !(currentWidth >= 100))
+      if (!(currentWidth >= 100 && currentWidth <= 200)) {
         document.getElementById("details").style.backgroundColor = 'chocolate'
+      }
+
+      let x = null;
+      if (!x) {
+        alert('Passou no if')
       }
     }
   </script>

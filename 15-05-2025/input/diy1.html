@@ -48,13 +48,17 @@
       // if (parseInt(document.getElementById("details").style.width) < 100) {
       //   document.getElementById("details").style.backgroundColor = 'blue'
       // }
-      if (parseInt(document.getElementById("details").style.width) < 100) {
-        document.getElementById("details").style.backgroundColor = 'blue'
-      } else if (parseInt(document.getElementById("details").style.width) < 200) {
-        document.getElementById("details").style.backgroundColor = 'darkgreen'
-      } else if (parseInt(document.getElementById("details").style.width) < 300) {
-        document.getElementById("details").style.backgroundColor = 'darkgray'
-      } else {
+      // if (parseInt(document.getElementById("details").style.width) < 100) {
+      //   document.getElementById("details").style.backgroundColor = 'blue'
+      // } else if (parseInt(document.getElementById("details").style.width) < 200) {
+      //   document.getElementById("details").style.backgroundColor = 'darkgreen'
+      // } else if (parseInt(document.getElementById("details").style.width) < 300) {
+      //   document.getElementById("details").style.backgroundColor = 'darkgray'
+      // } else {
+      //   document.getElementById("details").style.backgroundColor = 'chocolate'
+      // }
+
+      if (currentWidth >= 100 && currentWidth <= 200) {
         document.getElementById("details").style.backgroundColor = 'chocolate'
       }
     }

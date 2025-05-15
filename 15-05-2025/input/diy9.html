@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Input</title>
+  </head>
+
+  <body>
+    <h3>É divisivel por 2</h3>
+    <p id="result"></p>
+
+    <div>
+      <label for="x">X: </label>
+      <input id="x" type="number" name="x" value="0"/>
+    </div>
+
+
+    <button onclick="check()">Check</button>
+
+    <script>
+      
+      const check = (parameters, parametros) => {
+        const x = Number(document.getElementById("x").value)
+
+        const soma = (x % 2) === 0
+        document.getElementById("result").innerText = soma
+      }
+    </script>
+  </body>
+</html>

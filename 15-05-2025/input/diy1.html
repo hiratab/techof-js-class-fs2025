@@ -41,34 +41,53 @@
       document.getElementById("details").style.height = newWidth + 'px'
 
       // document.getElementById("details").style.backgroundColor = 'blue'
-      // if (parseInt(document.getElementById("details").style.width) >= 100) {
+      // if (currentWidth >= 100) {
       //   document.getElementById("details").style.backgroundColor = 'chocolate'
       // }
       // document.getElementById("details").style.backgroundColor = 'chocolate'
-      // if (parseInt(document.getElementById("details").style.width) < 100) {
+      // if (currentWidth < 100) {
       //   document.getElementById("details").style.backgroundColor = 'blue'
       // }
-      // if (parseInt(document.getElementById("details").style.width) < 100) {
+      // if (currentWidth < 100) {
       //   document.getElementById("details").style.backgroundColor = 'blue'
-      // } else if (parseInt(document.getElementById("details").style.width) < 200) {
+      // } else if (currentWidth < 200) {
       //   document.getElementById("details").style.backgroundColor = 'darkgreen'
-      // } else if (parseInt(document.getElementById("details").style.width) < 300) {
+      // } else if (currentWidth < 300) {
       //   document.getElementById("details").style.backgroundColor = 'darkgray'
       // } else {
       //   document.getElementById("details").style.backgroundColor = 'chocolate'
       // }
 
-      document.getElementById("details").style.backgroundColor = 'blue'
-      console.log('currentWidth', currentWidth, '!currentWidth >= 100', !(currentWidth >= 100))
-      if (!(currentWidth >= 100 && currentWidth <= 200)) {
-        document.getElementById("details").style.backgroundColor = 'chocolate'
-      }
+      // document.getElementById("details").style.backgroundColor = 'blue'
+      // console.log('currentWidth', currentWidth, '!currentWidth >= 100', !(currentWidth >= 100))
+      // if (!(currentWidth >= 100 && currentWidth <= 200)) {
+      //   document.getElementById("details").style.backgroundColor = 'chocolate'
+      // }
 
-      let x = null;
-      if (!x) {
+      const backgroundColor = currentWidth < 100 ? 'blue' : 'chocolate'
+      document.getElementById("details").style.backgroundColor = backgroundColor
+
+      // let backgroundColor;
+      // if (currentWidth < 100) {
+      //   backgroundColor = 'blue';
+      // } else {
+      //   backgroundColor = 'chocolate';
+      // }
+
+      let x;
+      if (x) {
         alert('Passou no if')
       }
     }
+
+    console.log("Diferenca entre == vs ===")
+    console.log(" '' == '0' ", '' == '0') // false
+    console.log(" '' == 0 ", '' == 0) // true
+    console.log(" '0' == 0 ", '0' == 0) // true
+    console.log(" '' === 0 ", '' === 0) // false
+    console.log(" '0' === 0 ", '0' === 0) // false
+    console.log(" '0' === '0' ", '0' === '0') // true
+    % 2
   </script>
 </body>
 

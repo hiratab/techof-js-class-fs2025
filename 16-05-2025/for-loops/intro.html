@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>For Loops</title>
+  </head>
+
+  <body>
+    <script>
+      console.log(1)
+      console.log(2)
+      console.log(3)
+      console.log(4)
+      console.log(5)
+      console.log(6)
+      console.log(7)
+      console.log(8)
+      console.log(9)
+      console.log(10)
+
+      const printToConsole = (i) => {
+        console.log('printToConsole', i)
+      }
+
+      
+      for (let i = 1; i <= 10; i++) {
+        printToConsole(i)
+      }
+
+      for (let i = 1; i > 0 ; i--) {
+        printToConsole(i)
+      }
+
+      for (let i = 1; i <= 10; i++) {
+        if (i % 2 === 0) {
+          console.log('even', i)
+        }
+      }
+    </script>
+  </body>
+</html>

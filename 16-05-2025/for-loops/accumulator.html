@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>For Loops</title>
+  </head>
+  <p id="sum"></p>
+
+  <body>
+    <script>
+      let acc = 0;
+      for (let i = 0; i < 5; i++) {
+        const number = parseInt(prompt('Insert a number'))
+        
+        acc += number
+      }
+
+      document.getElementById("sum").innerText = acc
+    </script>
+  </body>
+</html>

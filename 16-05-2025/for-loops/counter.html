@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>For Loops</title>
+  </head>
+  <p id="details"></p>
+
+
+  <body>
+    <script>
+      let counter = 0;
+      for (let i = 0; i < 4; i++) {
+        const number = parseInt(prompt('Insert a number'))
+        
+        if (number % 2 === 0) {
+          counter++
+        }
+      }
+
+      document.getElementById("details").innerText = counter
+    </script>
+  </body>
+</html>

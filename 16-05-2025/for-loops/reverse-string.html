@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>For Loops - Factorial</title>
+</head>
+
+<body>
+  <input type="text" id="texto"/>
+  <button onclick="reverse()">reverse</button>
+  <p id="result"></p>
+
+  <script>
+    /*
+      abcdef => fedcba
+    */
+    const reverse = () => {
+      const texto = document.getElementById("texto").value
+      console.log('texto', texto)
+
+      let reverse = ''
+      for (let i = texto.length - 1; i >= 0 ; i--) {
+        console.log(texto[i])
+        reverse += texto[i]
+      }
+
+      document.getElementById("result").innerText = reverse
+    }
+  </script>
+</body>
+
+</html>

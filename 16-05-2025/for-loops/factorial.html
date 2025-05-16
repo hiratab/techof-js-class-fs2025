@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>For Loops - Factorial</title>
+</head>
+
+<body>
+  <input type="text" id="number"/>
+  <button onclick="calculate()">Calculate</button>
+  <p id="result"></p>
+
+  <script>
+    /*
+      0! => 1
+      2! => 2 x 1 = 2
+      3! => 3 x 2 x 1 = 6
+      4! => 4 x 3 x 2 x 1 = 24
+    */
+
+    const calculate = () => {
+      const number = parseInt(document.getElementById("number").value)
+      
+      if (!number) {
+        return
+      }
+
+      let result = 1;
+      for (let i = number; i > 0; i--) {
+        result = result * i
+        console.log('result', result, 'i', i)
+      }
+
+      document.getElementById("result").innerText = result
+    }
+  </script>
+</body>
+
+</html>

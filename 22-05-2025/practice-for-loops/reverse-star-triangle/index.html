@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Practice For Loops - Count Odd</title>
+</head>
+
+<body>
+  <div>
+    <label for="from">From:</label>
+    <input id="from" type="number" value="0">
+  </div>
+  <div>
+    <button onclick="generateTriangle()">Generate Triangle</button>
+  </div>
+  <p id="result"></p>
+
+  <script>
+    function generateTriangle() {
+      const from = parseInt(document.getElementById('from').value)
+
+      let result = ""
+      for (let rows = 0; rows < from; rows++) {
+
+        let line = ""
+        for (let space = 1; space < from - rows; space++) {
+          line = line + "\xa0\xa0"
+        }
+
+        for (let star = 0; star <= rows; star++) {
+          line += "*"
+        }
+        result = result + line + "\n"
+      }
+
+      document.getElementById("result").innerText = result
+    }
+  </script>
+</body>
+
+</html>

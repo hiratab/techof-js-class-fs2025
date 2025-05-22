@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Practice For Loops - Print 1 to 10</title>
+</head>
+
+<body>
+  <p id="result"></p>
+
+  <script>
+    function loop() {
+      let result = ""
+      for (let i = 1; i <= 10; i++) {
+        console.log(i)
+        result = result + i + "\n"
+      }
+
+      document.getElementById("result").innerText = result
+    }
+  </script>
+</body>
+
+</html>

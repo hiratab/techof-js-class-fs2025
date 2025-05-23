@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>While Loops</title>
+</head>
+
+<body>
+  <h1>While Loops</h1>
+
+  <script>
+    // Password Checker
+    // Prompting for a password until the correct is entered
+    // alert the success
+
+    const CORRECT_PASSWORD = '123456'
+    let password = ''
+    while(CORRECT_PASSWORD !== password) {
+      password = prompt('Enter password')
+    }
+    alert('Success')
+    
+    do {
+      password = prompt('Enter password')
+    } while(CORRECT_PASSWORD !== password)
+  </script>
+</body>
+
+</html>

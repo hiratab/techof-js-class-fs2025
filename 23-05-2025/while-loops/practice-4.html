@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>While Loops</title>
+</head>
+
+<body>
+  <h1>While Loops</h1>
+
+  <button onclick="atm()">Access ATM</button>
+  <p id="result"></p>
+
+  <script>
+    // A customer wants to withdraw money from their account
+    // Their balance is $500
+    // Prompt them for withdrawal amounts until they type 0 or the balance runs out
+    // After each withdrawal, show the new balance
+    // If they try to withdraw more than the balance, deny the transaction
+
+    const atm = () => {
+      let balance = 500
+      let amountToWithdrawal = -1
+
+      while (balance > 0 && amountToWithdrawal !== 0) {
+        amountToWithdrawal = 
+          parseInt(prompt(
+            'Enter the amount to withdrawal '
+            + 'or type 0 to exit\n'
+            + 'Balance: ' + balance
+          ))
+        
+        if (amountToWithdrawal > balance) {
+          alert('Operation denied')
+          continue
+        }
+
+        balance = balance - amountToWithdrawal
+      }
+    }
+  </script>
+</body>
+
+</html>

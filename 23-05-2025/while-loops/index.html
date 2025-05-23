@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>While Loops</title>
+</head>
+
+<body>
+  <h1>While Loops</h1>
+
+  <p>
+    while (loop expression) {
+    loop body
+    }
+  </p>
+
+  <div>
+    <label for="number">Enter number:</label>
+    <input type="text" id="number" placeholder="A number" />
+  </div>
+  <button onclick="countDigits()">
+    Count Digits
+  </button>
+
+  <p id="result"></p>
+
+  <script>
+    const countDigits = () => {
+      const number = parseInt(
+        document.getElementById("number").value
+      )
+
+      if (!number) {
+        return
+      }
+      console.log('number', number)
+
+      let count = 0
+      let n = number
+      // 100 / 10 = 10
+      // 10 / 10 = 1
+      // 1 / 10 = 0
+
+      while (n !== 0) {
+        count++
+        n = Math.floor(n / 10)
+      }
+
+      let i = 1
+      while (counter < 10) {
+        if (input % 2 === 0) {
+          counter++
+        }
+      }
+
+      for (let i = 0 ; i < 5 ; i++) {
+        console.log(i)
+      }
+
+      document.getElementById('result').innerText = count
+    }
+  </script>
+</body>
+
+</html>

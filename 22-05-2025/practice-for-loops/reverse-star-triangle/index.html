@@ -22,15 +22,15 @@
       let result = ""
       for (let rows = 0; rows < from; rows++) {
 
-        let line = ""
-        for (let space = 1; space < from - rows; space++) {
-          line = line + "\xa0\xa0"
+        let line = []
+        for (let space = 0; space < from; space++) {
+          line[space] = "\xa0\xa0"
         }
 
-        for (let star = 0; star <= rows; star++) {
-          line += "*"
+        for (let star = from; star > rows; star--) {
+          line[star] =  "*"
         }
-        result = result + line + "\n"
+        result = result + line.join('') + "\n"
       }
 
       document.getElementById("result").innerText = result

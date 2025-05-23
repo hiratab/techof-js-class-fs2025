@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>While Loops</title>
+</head>
+
+<body>
+  <h1>While Loops</h1>
+
+  <button onclick="simulate()">Simulate</button>
+  <p id="result"></p>
+
+  <script>
+    // Your store needs 100 units of stock
+    // Each delivery brings a random amount 
+    // between 5 and 20 units
+    // Use a while loop to simulate deliveries until the goal 
+    // is reached
+    // Track and print each delivery and total stock
+
+    // Stock - 0 Delivery - 5
+    // Stock - 5 Delivery - 20
+    // Stock - 25 Delivery - 20
+    // Stock - 45 Delivery - 5
+
+    const simulate = () => {
+      const STOCK_NEEDED = 100
+      let stock = 0
+
+      while (stock < STOCK_NEEDED) {
+        const delivery = Math.floor(
+          (Math.random() * 15) + 5
+        )
+
+        console.log('stock', stock, 'delivery', delivery)
+        stock = stock + delivery
+      }
+
+      console.log('stock', stock)
+    }
+  </script>
+</body>
+
+</html>

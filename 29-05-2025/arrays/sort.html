@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrays</title>
+  </head>
+  <body>
+    <h1>Arrays</h1>
+
+    <script>
+      const names = ['Bruno', 'Joao', 'ricardo', 'bruna']
+      const names1 = ['Claudio', 'Carolina',]
+
+      while (names.length > 0) {
+        names1.push(names.shift())
+      }
+
+      console.log(names1.sort((a, b) => a.toUpperCase().localeCompare(b.toUpperCase())))
+
+      console.log([10, 1, 20, 120, 210, 209,200, 400]
+      .sort((a, b) => a - b))
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <h1>Functions</h1>
+  <ul>
+    <li>Function Declaration</li>
+    <li>Function Expression</li>
+    <li>Arrow Functions</li>
+    <li>Immediate Function</li>
+  </ul>
+
+  <p id="result"></p>
+  <button onclick="welcome()">Welcome</button>
+  <button onclick="soma(1)">Soma com 1 parametro</button>
+  <button onclick="soma(2, 8)">Soma</button>
+
+  <script>
+    welcome()
+    soma(1)
+    function welcome() {
+      printToParagraph("Hello World!")
+    }
+
+    function soma(a, b = 2) {
+      const result = a + b
+
+      printToParagraph(result)
+    }
+
+    function printToParagraph(text) {
+      document.getElementById("result").innerText = text
+    }
+  </script>
+</body>
+
+</html>

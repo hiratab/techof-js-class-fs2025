@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <h1>Functions</h1>
+
+
+  <script>
+    function findMaxAndAlert(numbers) {
+      // const max = numbers.sort((a, b) => a - b).pop()
+
+      let maxNumber = Infinity * -1
+      for (let i = 0; i <= numbers.length; i++) {
+        if (numbers[i] > maxNumber) {
+          maxNumber = numbers[i]
+        }
+      }
+      alert(maxNumber)
+    }
+
+    const numbers = [1, 6, 2, 9] // => [1, 2, 6, 9]
+    //  pop: Remove o ultimo elemento do array => [1, 2, 6]
+    findMaxAndAlert(numbers)
+  </script>
+</body>
+
+</html>

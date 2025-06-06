@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Objects</title>
+</head>
+
+<body>
+  <p id="result"></p>
+
+  <script>
+
+    const carsColors = [
+      'white',
+    ]
+    const carsWheels = [
+      4
+    ]
+    const carDisplacement = [
+      1000
+    ]
+    const carHasTurbo = [
+      true
+    ]
+
+    const cars = [
+      {
+        color: 'white',
+        wheels: 4,
+        engine: {
+          displacement: 1000,
+          hasTurbo: true,
+          startEngine: () => {
+            console.log('Engine started')
+          },
+          stopEngine: () => {
+            console.log('Engine stopped')
+          }
+        }
+      }
+    ]
+
+    // JSON => JavaScript Object Notation
+    const car = {
+      'color': 'white',
+      wheels: 4,
+      engine: {
+        displacement: 1000,
+        'has-turbo': true,
+        startEngine: () => {
+          console.log('Engine started')
+        },
+        stopEngine: () => {
+          console.log('Engine stopped')
+        }
+      }
+    }
+    car.engine.startEngine()
+    car.engine.stopEngine()
+
+    document.getElementById('result')
+      .innerText = car.engine['has-turbo']
+
+    // const player = new Object()
+    // player.name = 'Bruno'
+    // player["has-credit"] = true
+    // delete player.name
+
+    // document.getElementById('result')
+    //   .innerText = JSON.stringify(player)
+  </script>
+</body>
+
+</html>

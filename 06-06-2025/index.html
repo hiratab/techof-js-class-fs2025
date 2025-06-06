@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Objects</title>
+</head>
+
+<body>
+  <p id="result"></p>
+
+  <script>
+    function Engine(displacement, hasTurbo) {
+      this.displacement = displacement
+      this.hasTurbo = hasTurbo
+      this.running = false
+      this.startEngine = () => {
+        if (this.running) {
+          console.log('Engine already started')
+          return
+        }
+        this.running = true
+        console.log('Engine started')
+      }
+      this.stopEngine = () => {
+        if (!this.running) {
+          console.log('Engine already stopped')
+          return
+        }
+        this.running = false
+        console.log('Engine stopped')
+      }
+    }
+
+    function Car(color, wheels, model, year, engine) {
+      this.color = color
+      this.wheels = wheels
+      this.model = model
+      this.year = year
+      this.engine = engine
+    }
+
+    const car = new Car(
+      'white',
+      4,
+      'T-Cross',
+      2025,
+      new Engine(1000, true)
+    )
+
+    const clio = new Car(
+      'red',
+      4,
+      'Clio',
+      1900,
+      new Engine(2000, false)
+    )
+
+    console.log(car)
+    console.log(clio)
+    car.engine.startEngine()
+    car.engine.startEngine()
+    clio.engine.stopEngine()
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Objects</title>
+</head>
+
+<body>
+  <p id="result"></p>
+
+  <script>
+    const car = {
+      'color': 'white',
+      wheels: 4,
+      model: 'T-Cross',
+      year: 2024,
+      engine: {
+        displacement: 1000,
+        'has-turbo': true,
+        startEngine: () => {
+          console.log('Engine started')
+        },
+        stopEngine: () => {
+          console.log('Engine stopped')
+        }
+      }
+    }
+    
+    const carRed = JSON.parse(JSON.stringify(car))
+    carRed.color = 'red'
+    carRed.model = 'Clio'
+    carRed.year = 2000
+    carRed.engine.displacement = 2000
+    
+    car.color = 'black'
+
+    console.log('car', JSON.stringify(car))
+    console.log('carRed', carRed)
+    carRed.engine.startEngine()
+
+  </script>
+</body>
+
+</html>

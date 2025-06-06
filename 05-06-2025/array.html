@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recursion</title>
+  </head>
+  <body>
+    
+    <script>
+      const list = [1, 2, 3, 4, 5, 6]
+      console.log('length', list.length)
+
+      for (let i = 0 ; i <= list.length ; i ++) {
+        console.log(list[i])
+      }
+
+      console.log('============ FOR EACH ============')
+      list.forEach(element => {
+        console.log(element)
+      })
+      
+      // console.log('============ Shift + While ============')
+      // let number = list.shift()
+      // while(number) {
+        //   console.log(number)
+        //   number = list.shift()
+        // }
+        
+        // console.log(list[list.length - 1])
+        // console.log(list.pop())
+        // console.log(list[list.length - 1])
+        
+      console.log('============ JOIN ============')
+      console.log(list.join(['_', '_', '_'].join('')))
+
+      const listA = [1, 2, 3, 4, 5, 6]
+      const listB = [6, 5, 4, 3, 2, 1]
+      const listC = listA.concat(listB)
+      console.log('listA', listA)
+      console.log('listB', listB)
+      console.log('listC', listC)
+
+      console.log([10, 5, 8, 1, 50, 25, 24].sort((a, b) => a - b))
+    </script>
+  </body>
+</html>

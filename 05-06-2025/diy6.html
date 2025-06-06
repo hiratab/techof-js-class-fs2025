@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Function</title>
+</head>
+
+<body>
+  <p id="max"></p>
+  <button onclick="start()">Start</button>
+
+  <script>
+    const start = function () {
+      let numbers = []
+
+      while (numbers.length < 5) {
+        numbers.push(Number(prompt('Insert a number')))
+      }
+
+      document.getElementById('max')
+        .innerText = numbers.sort((a, b) => b - a)[0]
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Function</title>
+</head>
+
+<body>
+  <p id="result"></p>
+
+  <script>
+    const numbers = [23, 22, 30, 11, 23, 22]
+
+    let result = "no"
+    if (numbers[0] === numbers[numbers.length -1]) {
+      result = "yes"
+    }
+
+    document.getElementById('result')
+      .innerText = result
+  </script>
+</body>
+
+</html>

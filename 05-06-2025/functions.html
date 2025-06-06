@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Function</title>
+</head>
+
+<body>
+  <p id="result"></p>
+
+  <script>
+    function functionDeclaration(message) {
+      console.log(message)
+      return message
+    }
+    functionDeclaration('functionDeclaration')
+
+    function openDoor() {
+
+    }
+    function closeDoor() {
+
+    }
+    openDoor()
+    closeDoor()
+
+    const soma = (x, y) => {
+      return x + y
+    }
+    const s = soma(1, 2)
+    const f = functionDeclaration('functionDeclaration')
+
+    console.log('s', s, 'f', f)
+    document.getElementById('result').innerText = [
+      's', s, 'f', f
+    ].join(' , ')
+
+    function printToP(x, y, fn) {
+      document.getElementById('result').innerText = fn(x, y)
+    }
+    printToP('Algum texto', 2, functionDeclaration)
+  </script>
+</body>
+
+</html>

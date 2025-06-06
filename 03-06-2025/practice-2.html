@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recursion</title>
+  </head>
+  <body>
+    <h1>Recursion</h1>
+    <h3>Factorial</h3>
+
+    <p id="result"></p>
+    <input type="number" id="number" />
+    <button onclick="startSum()">Calculate</button>
+    
+    <script>
+      function sum(number) {
+        if (number === 0) {
+          return 0;
+        }
+
+        if (number % 2 === 0) {
+          return number + sum(number - 2)
+        }
+
+        return sum(number - 1)
+      }
+
+      function startSum() {
+        const number = Number(document.getElementById("number").value)
+
+        const result = sum(number)
+
+        document.getElementById("result").innerText = result
+      }
+    </script>
+  </body>
+</html>

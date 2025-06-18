@@ -1,0 +1,33 @@
+<html>
+
+<body>
+
+  <h1>Change second to red 😱</h1>
+
+  <button onclick="changeSecondItemToRed()">Change second to red</button>
+
+  <ul id="myFriends">
+
+    <li>hi 🥳</li>
+
+    <li>by 😼</li>
+
+    <li>dy 👻</li>
+
+  </ul>
+
+  <script>
+
+    function changeSecondItemToRed() {
+      const li = document.createElement("li")
+      li.innerText = "Bruno"
+
+      document.getElementById("myFriends")
+        .appendChild(li)
+    }
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Your title</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <h1>Change second to red 😱</h1>
+
+  <button onclick="changeSecondItemToRed()">Change second to red</button>
+
+  <ul id="myFriends">
+    <li>hi 🥳</li>
+    <li>by 😼</li>
+    <li>dy 👻</li>
+  </ul>
+
+  <script>
+    function changeSecondItemToRed() {
+      document.getElementById("myFriends")
+        .children[1].style.color = "red"
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Your title</title>
+  <style>
+    p {
+      color: cadetblue;
+    }
+  </style>
+</head>
+
+<body>
+  <h5>Header</h5>
+  <h5>Header</h5>
+  <h5>Header</h5>
+
+
+  <ul>
+    <li class="css-class">Text</li>
+    <li class="css-class">Text</li>
+    <li>Text</li>
+  </ul>
+
+  <p></p>
+
+  <p id="result">
+    Algo no paragrafo
+  </p>
+
+  <script>
+    console.log(document.title)
+    console.log(document.URL)
+    console.log(document.body)
+    console.log(document.head)
+    
+    document
+      .getElementById("result")
+      .innerText = "Mudei o texto"
+
+    console.log(document
+      .getElementsByClassName("css-class"))
+    document
+      .getElementsByClassName("css-class")
+      [0]
+      .innerText = "Mudei o texto"
+
+    const h5s = document
+      .getElementsByTagName("h5")
+
+    for (let i = 0; i < h5s.length ; i++) {
+      h5s[i].textContent = "Mudei o header"
+    }
+
+    document
+      .querySelector(".css-class")
+      .innerText = "Coloquei um texto"
+
+    for (const p of document.querySelectorAll("p")) {
+      p.innerText = "Usei o querySelectorAll"
+      p.style.color = "darkred"
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Your title</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <input type="text" id="input" />
+    <button onclick="addToList()">Add To List</button>
+    <button onclick="removeItemsFromList()">Remove Items</button>
+    <button onclick="hideList()">Hide List</button>
+    <button onclick="showList()">Show List</button>
+  </div>
+
+  <ul id="my-list">
+  </ul>
+
+
+  <script>
+    function addToList() {
+      const text = document.getElementById("input")
+
+      const li = document.createElement("li")
+      li.innerText = text.value
+
+      const removeButton = document.createElement("button")
+      removeButton.innerText = "X"
+      removeButton.onclick = function () {
+        li.parentNode.removeChild(li)
+      }
+
+      li.appendChild(removeButton)
+
+      const list = document.getElementById("my-list")
+      list.appendChild(li)
+
+      text.value = ""
+    }
+
+    function removeItemsFromList() {
+      const lis = document
+        .getElementsByTagName("li")
+
+      for (let i = lis.length - 1; i >= 0 ; i--) {
+        lis[i].remove()
+      }
+    }
+
+    function hideList() {
+      document.getElementById("my-list")
+          .classList.add("hidden")
+    }
+
+    function showList() {
+      document.getElementById("my-list")
+        .classList.remove("hidden")
+    }
+  </script>
+</body>
+
+</html>

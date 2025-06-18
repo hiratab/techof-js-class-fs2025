@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Your title</title>
+  <style>
+    li:hover {
+      color: red;
+      transition: color 2s;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Change second to red 😱</h1>
+
+  <button onclick="changeSecondItemToRed()">Change second to red</button>
+
+  <ul id="my-friends">
+    <li>hi 🥳</li>
+    <li>by 😼</li>
+    <li>dy 👻</li>
+  </ul>
+
+  <input type="text" />
+
+  <script>
+    function changeSecondItemToRed() {
+      document.getElementById("my-friends")
+        .children[1].style.color = "red"
+    }
+
+    const ul = document.getElementById("my-friends")
+    ul.style.backgroundColor = "orange"
+    ul.onmouseover = function () {
+      ul.style.color = "blue"
+    }
+
+    ul.onmouseout = function () {
+      ul.style.color = "black"
+    }
+  </script>
+
+</body>
+
+</html>

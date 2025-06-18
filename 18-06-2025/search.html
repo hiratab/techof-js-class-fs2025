@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Your title</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <h1>Countries</h1>
+
+  <div>
+    <input type="text" id="country-name" placeholder="Search for Country..." />
+  </div>
+
+  <div id="countries-container">
+    <ul id="countries">
+
+    </ul>
+  </div>
+
+  <script>
+    const COUNTRIES = [
+      'Portugal', 'Brasil', 'Angola', 'Kenya'
+    ]
+
+    function createCountriesList() {
+      renderList(COUNTRIES)
+    }
+
+    function renderList(countries) {
+      const ul = document.getElementById("countries")
+
+      for (const country of countries) {
+        const li = document.createElement("li")
+        li.innerText = country
+
+        ul.appendChild(li)
+      }
+    }
+
+    function clearList() {
+      const ul = document.getElementById("countries")
+
+      while (ul.firstChild) {
+        ul.removeChild(ul.firstChild)
+      }
+    }
+
+    function filterList() {
+      clearList()
+
+      const countryName = document.getElementById("country-name").value
+
+      for (const country of COUNTRIES) {
+        if (
+          country.toUpperCase().indexOf(countryName.toUpperCase()) >= 0 ||
+          countryName === ""
+        ) {
+          renderList([country])
+        }
+      }
+    }
+    document.getElementById("country-name")
+      .addEventListener('input', filterList)
+
+    document.addEventListener('DOMContentLoaded', createCountriesList)
+  </script>
+</body>
+
+</html>

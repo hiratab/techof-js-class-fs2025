@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Callback Example</title>
+  <style>
+    p {
+      font-size: 3em;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    const course = {
+      name: '',
+      description: '',
+      students: [],
+      addStudents: function (studentName) {
+        this.students.push(studentName)
+        console.log(`${studentName} added to ${this.name} course`)
+      },
+    }
+
+    const english = {
+      name: 'English course',
+      description: 'This is an awesome english course',
+      students: []
+    }
+
+    const math = {
+      name: 'Math course',
+      description: 'This is an awesome Math course',
+      students: []
+    }
+
+    course.addStudents('Bruno')
+    console.log(course)
+
+    const addStudents = course.addStudents
+    addStudents.call(english, 'Bruno')
+    addStudents.call(english, 'Ricardo')
+    addStudents.call(math, 'Sergio')
+    addStudents.call(math, 'Joao')
+    console.log(course)
+    console.log(english)
+    console.log(math)
+  </script>
+
+</html>

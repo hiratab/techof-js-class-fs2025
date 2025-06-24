@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Callback Example</title>
+  <style>
+    p {
+      font-size: 3em;
+    }
+  </style>
+</head>
+
+<body>
+  <p id="hello"></p>
+  <input type="text" id="name" />
+  <button onclick="processUserInput()">Process</button>
+
+
+  <script>
+    function greeting(name) {
+      document.getElementById('hello').innerText = `Hello, ${name}`
+    }
+
+    function createGreetingText(callback) {
+      const name = document.getElementById('name').value
+      callback(name)
+    }
+
+    function processUserInput() {
+      createGreetingText(greeting)
+    }
+  </script>
+
+</html>

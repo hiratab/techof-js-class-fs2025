@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Destructing Assignment Example - Array</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div id="data-structure">
+    <h1>Destructing Assignment Example - Array</h1>
+    <p>This is an example of a simple Destructing Assignment in JavaScript.</p>
+    <ul id="data-list">
+    </ul>
+  </div>
+
+  <script>
+    let array = []
+    array = [1, 2, 3, 4, 5]
+    console.log('array', array)
+
+    let x = array[0]
+    let y = array[1]
+    console.log('x', x, 'y', y)
+    
+    let a, b;
+    [a, b] = array
+    console.log('a', a, 'b', b)
+    
+    let [c, d] = array
+    console.log('c', c, 'd', d)
+  </script>
+
+</html>

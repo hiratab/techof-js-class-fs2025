@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Spread Operator Example - Array</title>
+  <style>
+    p {
+      font-size: 8em;
+    }
+  </style>
+</head>
+
+<body>
+  <p id="result"></p>
+
+  <script>
+    let array = [1, 2, 3, 4]
+    let otherArray = [10, 11, 12]
+    
+    let result = [...array, ...otherArray,]
+    document.getElementById("result").innerText = result
+    
+    for (const number of result) {
+      console.log(number)
+    }
+
+    console.log("===========================")
+    let [x, y, ...rest] = result
+    console.log('x', x, 'y', y, 'rest', rest)
+  </script>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Backtick Character Example - Object</title>
+  <style>
+    p {
+      font-size: 8em;
+    }
+  </style>
+</head>
+
+<body>
+  <p id="result"></p>
+
+  <script>
+    function printToParagraph(elementId, text) {
+      // document.getElementById(elementId)
+      //   .innerText = 'Minha camisa é ' + 10
+      document.getElementById(elementId)
+        .innerText = `Minha camisa é ${JSON.stringify(text)}`
+    }
+    printToParagraph('result', { obj: 10})
+
+  </script>
+
+</html>

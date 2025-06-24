@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Loop Array Example</title>
+  <style>
+    p {
+      font-size: 8em;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    const numbers = [1, 2, 3, 4]
+
+    console.log('For Of')
+    for (const number of numbers) {
+      console.log(number)
+    }
+
+    console.log('For of entries')
+    for (const number of numbers.entries()) {
+      console.log(number)
+    }
+
+    console.log('For of entries Com Destruct')
+    for (const [index, value] of numbers.entries()) {
+      console.log('index', index, 'value', value)
+    }
+
+    console.log('For In')
+    for (const number in numbers) {
+      console.log(number)
+    }
+  </script>
+
+</html>

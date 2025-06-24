@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Spread Operator Example - Object</title>
+  <style>
+    p {
+      font-size: 8em;
+    }
+  </style>
+</head>
+
+<body>
+  <p id="result"></p>
+
+  <script>
+    const obj = {
+      id: 42,
+      isVerified: true,
+    }
+
+    const clonedObject = {
+      ...obj,
+      toString: () => console.log('Oi oi')
+    }
+    obj.isVerified = false
+    obj.car = 10
+    clonedObject.motorcycle = 20
+
+    console.log('obj', obj)
+    console.log('clonedObject', clonedObject)
+
+    const mergedObject = { ...obj, ...clonedObject, id: 43, }
+    console.log('mergedObject', mergedObject)
+
+
+    function nome({ a, b, ...c }) {
+
+    }
+
+    function nome1([a, b, ...c]) {
+
+    }
+  </script>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Rest Parameter Example - Object</title>
+  <style>
+    p {
+      font-size: 8em;
+    }
+  </style>
+</head>
+
+<body>
+  <p id="result"></p>
+
+  <script>
+    function printToParagraph(elementId, text, ...otherArgs) {
+      document.getElementById(elementId).innerText = otherArgs
+    }
+    printToParagraph('result', 'texto', 'a', 'b', 'c')
+
+    function x(...otherArgs) {
+      console.log(otherArgs)
+    }
+    x('a', 'b', 'c', 'd', 'e')
+  </script>
+</html>

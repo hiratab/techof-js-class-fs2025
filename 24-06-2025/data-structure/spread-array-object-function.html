@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Rest Parameter Example - Object</title>
+  <style>
+    p {
+      font-size: 8em;
+    }
+  </style>
+</head>
+
+<body>
+  <p id="result"></p>
+  <p id="result-obj"></p>
+  <p id="result-array"></p>
+
+  <script>
+    function printToParagraph(elementId, text, fontSize = '8em') {
+      document.getElementById(elementId).innerText = text
+
+      const x = fontSize.toLowerCase()
+      document.getElementById(elementId).style.fontSize = fontSize
+    }
+    printToParagraph('result', 'texto')
+    
+    
+    function printToParagraphObj({ elementId, text, fontSize = '8em' }) {
+      document.getElementById(elementId).innerText = text
+      const x = fontSize.toLowerCase()
+      document.getElementById(elementId).style.fontSize = fontSize
+    }
+    printToParagraphObj({
+      elementId: 'result-obj', 
+      text: 'texto-obj'
+    })
+
+    function printToParagraphArray([ elementId, text, fontSize = '8em' ]) {
+      document.getElementById(elementId).innerText = text
+      const x = fontSize.toLowerCase()
+      document.getElementById(elementId).style.fontSize = fontSize
+    }
+    printToParagraphArray(['result-array', 'texto-array'])
+  </script>
+</html>

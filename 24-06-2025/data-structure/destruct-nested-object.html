@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Destructing Assignment Example - Object</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div id="data-structure">
+    <h1>Destructing Assignment Example - Object</h1>
+    <p>This is an example of a simple Destructing Assignment in JavaScript.</p>
+    <ul id="data-list">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
+
+  <script>
+    const styles = {
+      dataList: {
+        color: 'blue',
+        fontSize: '3em',
+      },
+      meuOutroElement: {
+        a: {
+          b: {
+            color: 'blue',
+            fontSize: '3em',
+          }
+        }
+      },
+      algumOutroElement: {
+        backgroundColor: '#787878',
+      },
+    }
+
+    const { dataList: { color, fontSize, backgroundColor = '#e1e1e1' } } = styles
+    document.getElementById("data-list").style.color = color
+    document.getElementById("data-list").style.fontSize = fontSize
+    document.getElementById("data-list").style.backgroundColor = backgroundColor
+  </script>
+
+</html>

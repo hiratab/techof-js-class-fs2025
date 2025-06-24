@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Nullish Coalescing Example - Object</title>
+  <style>
+    p {
+      font-size: 8em;
+    }
+  </style>
+</head>
+
+<body>
+  <p id="result"></p>
+
+  <script>
+    function printToParagraph(elementId, text) {
+      const innerText = text || 'Meu texto quando text for null ou undefined'
+      document.getElementById(elementId).innerText = innerText
+    }
+    printToParagraph('result', 0)
+
+  </script>
+
+</html>

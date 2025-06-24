@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Loop Array Example</title>
+  <style>
+    p {
+      font-size: 8em;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    const object = {
+      car: 1,
+      motorcycle: 2,
+      bicycle: 1
+    }
+
+    console.log(Object.keys(object))
+    for (const key of Object.keys(object)) {
+      console.log(`${key}: ${object[key]}`)
+    }
+  </script>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Closure Example</title>
+  <style>
+    p {
+      font-size: 3em;
+    }
+  </style>
+</head>
+
+<body>
+  <p id="hello"></p>
+
+  <script>
+    function init() {
+      let name = 'Bruno'
+      console.log(name)
+    }
+
+    (() => console.log(name))()
+
+    init()
+  </script>
+  <script>
+    (() => console.log(name))()
+  </script>
+
+</html>

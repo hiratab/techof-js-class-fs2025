@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DOM - B</title>
+  <style>
+    .big {
+      font-size: 2em;
+    }
+
+    .blue {
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="add">Add Class</button>
+  <button id="remove">Remove Class</button>
+  <p id="paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+  </p>
+
+  <script>
+    const paragraph = document.getElementById("paragraph")
+
+    function addClass() {
+      paragraph.classList.add('big', 'blue')
+    }
+    document.getElementById('add')
+      .addEventListener('click', addClass)
+
+    function removeClass() {
+      paragraph.classList.remove('big', 'blue')
+    }
+    document.getElementById('remove')
+      .addEventListener('click', removeClass)
+  </script>
+</body>
+
+</html>

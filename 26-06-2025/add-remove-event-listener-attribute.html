@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DOM - B</title>
+</head>
+
+<body>
+  <button id="play-button" disabled>Play</button>
+  <input id="input" disabled />
+
+  <br>
+  <button id="activate-button">Activate</button>
+  <button id="deactivate-button">Deactivate</button>
+
+  <br>
+  <button id="add-event-button">Add Event</button>
+  <button id="remove-event-button">Remove Event</button>
+
+  <script>
+    function play() {
+      alert("Play")
+    }
+
+    const playButton = document.getElementById("play-button")
+    const input = document.getElementById('input')
+    playButton.addEventListener('click', play)
+
+    function activateButton() {
+      playButton.removeAttribute('disabled')
+      input.removeAttribute('disabled')
+    }
+    document.getElementById('activate-button')
+      .addEventListener('click', activateButton)
+
+    function deactivateButton() {
+      playButton.setAttribute('disabled', '')
+      input.setAttribute('disabled', '')
+      input.setAttribute('type', 'number')
+    }
+    document.getElementById('deactivate-button')
+      .addEventListener('click', deactivateButton)
+
+    const addEventButton = document.getElementById('add-event-button')
+    const removeEventButton = document.getElementById('remove-event-button')
+
+    function addEvent() {
+      playButton.addEventListener('click', play)
+    }
+    addEventButton.addEventListener('click', addEvent)
+
+
+    function removeEvent() {
+      playButton.removeEventListener('click', play)
+    }
+    removeEventButton.addEventListener('click', removeEvent)
+  </script>
+</body>
+
+</html>

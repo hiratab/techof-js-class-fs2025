@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DOM - B</title>
+  <style>
+    .box {
+      border: 1px solid green;
+      padding: 1em;
+      margin: 0.5em;
+      background-color: rgb(230, 233, 235);
+    }
+
+    img {
+      width: 80px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box0" class="box">
+    <div>
+      <h2>0</h2>
+    </div>
+
+    <p>Lorem ipsum dolor sit amet</p>
+    <img src="images/ball.png" />
+    <button onclick="_scrollTo(2)">Jump to 2</button>
+  </div>
+
+  <div id="box1" class="box">
+    <div>
+      <h2>1</h2>
+    </div>
+
+    <p>Lorem ipsum dolor sit amet</p>
+    <img src="images/boat.png" />
+    <button>Next</button>
+  </div>
+
+  <div id="box2" class="box">
+    <div>
+      <h2>2</h2>
+    </div>
+
+    <p>Lorem ipsum dolor sit amet</p>
+    <img src="images/hat.png" />
+    <button onclick="_scrollTo(0)">Next</button>
+  </div>
+
+
+  <script>
+    function _scrollTo(destination) {
+      let box = document.getElementById(`box${destination}`)
+      box.scrollIntoView({ behavior: 'smooth' })
+    }
+
+  </script>
+</body>
+
+</html>

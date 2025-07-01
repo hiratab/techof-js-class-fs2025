@@ -2,58 +2,74 @@
 <html>
 
 <head>
-  <title>DOM - B</title>
+  <title>Map</title>
   <style>
-    .box {
-      border: 1px solid green;
-      padding: 1em;
-      margin: 0.5em;
-      background-color: rgb(230, 233, 235);
-    }
-
-    img {
-      width: 80px;
-    }
   </style>
 </head>
 
 <body>
-  <div class="box">
-    <div>
-      <h2>0</h2>
-    </div>
-
-    <p>Lorem ipsum dolor sit amet</p>
-    <img src="images/ball.png" />
-    <button onclick="_scrollTo(2)">Jump to 2</button>
-  </div>
-
-  <div id="box1" class="box">
-    <div>
-      <h2>1</h2>
-    </div>
-
-    <p>Lorem ipsum dolor sit amet</p>
-    <img src="images/boat.png" />
-    <button>Next</button>
-  </div>
-
-  <div id="box2" class="box">
-    <div>
-      <h2>2</h2>
-    </div>
-
-    <p>Lorem ipsum dolor sit amet</p>
-    <img src="images/hat.png" />
-    <button>Next</button>
-  </div>
-
+  <p id="result"></p>
 
   <script>
-    function _scrollTo(destination) {
-      let box = document.getElementById(`box${destination}`)
-      box.scrollIntoView({ behavior: 'smooth' })
+    const map = new Map()
+    map.set('a', 1)
+    map.set('b', 2)
+    map.set('c', 3)
+    console.log(map)
+    console.log(map.get('a'))
+
+    const obj = {}
+    obj.a = 1
+    obj['b'] = 2
+    obj.c = 3
+    console.log(obj)
+    console.log(obj.a)
+
+
+    // Delete an element
+    map.delete('c')
+    console.log(map)
+
+    delete obj.c
+    console.log(obj)
+
+    // Iterate over map
+    for (const [key, value] of map) {
+      console.log(`key ${key} value ${value}`)
     }
+
+    for (const key of map.keys()) {
+      console.log(`key ${key}`)
+    }
+
+    for (const value of map.values()) {
+      console.log(`value ${value}`)
+    }
+
+    for (const [key, value] of map.entries()) {
+      console.log(`key ${key} value ${value}`)
+    }
+
+    // Initializating a map
+    const initMap = new Map([
+      ['a', 1],
+      ['b', 2],
+      ['c', 3]
+    ])
+    console.log(initMap)
+
+    // Converting Map to Array
+    console.log(Array.from(initMap))
+    console.log([...initMap])
+    console.log([...initMap.keys()])
+    console.log([...initMap.values()])
+    console.log([...initMap.entries()])
+
+    // Merge Two Maps
+    const merged = new Map(
+      [...map, ...initMap]
+    )
+    console.log(merged)
 
   </script>
 </body>

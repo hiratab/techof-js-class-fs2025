@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Image</title>
+  <style>
+    img {
+      width: 10em;
+    }
+
+    #play-again-button {
+      display: none;
+    }
+
+    button {
+      background-color: rgb(229, 229, 99);
+      border: 0px solid black;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <p id="question-number">Question Number: 1</p>
+  <img id="image">
+  <button id="change-image">Change Image</button>
+  <button id="play-again-button" disabled>Play Again</button>
+  <input id="guess" type="text" placeholder="Starts with...">
+  <p id="result"></p>
+  <p id="score">Score: 0</p>
+
+  <script>
+    const IMAGES = [
+      {
+        image: "images/ball.png",
+        answer: "b"
+      },
+      {
+        image: "images/boat.png",
+        answer: "b"
+      },
+      {
+        image: "images/hat.png",
+        answer: "h"
+      },
+      {
+        image: "images/kite.png",
+        answer: "k"
+      },
+      {
+        image: "images/popsicle.png",
+        answer: "p"
+      },
+      {
+        image: "images/sad.png",
+        answer: "s"
+      },
+      {
+        image: "images/short.png",
+        answer: "s"
+      },
+      {
+        image: "images/smily.png",
+        answer: "s"
+      },
+      {
+        image: "images/star.png",
+        answer: "s"
+      },
+    ]
+
+    let imgIndex = generateRandomNumber()
+    let score = 0
+    let questionNumber = 0
+
+    function generateRandomNumber() {
+      return Math.floor(Math.random() * IMAGES.length)
+    }
+
+    function changeImage() {
+      const img = document.getElementById("image")
+      const result = document.getElementById("result")
+      result.innerText = IMAGES[imgIndex].answer
+
+      imgIndex = generateRandomNumber()
+      img.src = IMAGES[imgIndex].image
+    }
+
+    function calculateUpdateScore(guess, answer) {
+      if (guess === answer) {
+        score = score + 5
+      } else {
+        score = score - 5
+      }
+      document.getElementById("score").innerText = `Score: ${score}`
+    }
+
+    function updateQuestionNumber() {
+      questionNumber = questionNumber + 1
+      document.getElementById("question-number")
+        .innerText = `Question Number: ${questionNumber}`
+    }
+
+    function checkAnswer() {
+      const guess = document.getElementById("guess").value
+
+      calculateUpdateScore(guess.toLowerCase()[0], IMAGES[imgIndex].answer)
+      changeImage()
+      updateQuestionNumber()
+
+      if (questionNumber > 3) {
+        document.getElementById("change-image").disabled = true
+
+        const playAgainButton = document.getElementById("play-again-button")
+        playAgainButton.removeAttribute("disabled")
+        playAgainButton.style.display = 'block'
+
+        document.getElementById("question-number")
+        .innerText = `Game Over. Your score: ${score}`
+      }
+    }
+    document.getElementById("change-image").addEventListener('click', checkAnswer)
+
+    function resetGame() {
+      questionNumber = 0
+      updateQuestionNumber()
+      document.getElementById("change-image").removeAttribute("disabled")
+
+      const playAgainButton = document.getElementById("play-again-button")
+      playAgainButton.disabled = true
+      playAgainButton.style.display = 'none'
+    }
+    document.getElementById("play-again-button")
+      .addEventListener('click', resetGame)
+
+    window.onload = () => {
+      changeImage()
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Image</title>
+  <style>
+    div {
+      width: 3em;
+      height: 3em;
+    }
+  </style>
+</head>
+
+<body>
+  <p id="country"></p>
+  <p id="region"></p>
+  <p id="population"></p>
+  <p id="currency"></p>
+  <p id="language"></p>
+
+
+  <script>
+    const country = document.getElementById("country")
+    const region = document.getElementById("region")
+    const population = document.getElementById("population")
+    const currency = document.getElementById("currency")
+    const language = document.getElementById("language")
+
+    // async await
+
+    // fetch("https://restcountries.com/v2/name/portugal")
+    //   .then(response => {
+    //     return response.json()
+    //   })
+    //   .then(response => {
+    //     country.innerText = `country: ${response[0].name}`
+    //     region.innerText = `region: ${response[0].region}`
+    //     population.innerText = `population: ${response[0].population}`
+    //     currency.innerText = `currency: ${response[0].currencies[0].name}`
+    //     language.innerText = `language: ${response[0].languages[0].name}`
+    //   })
+
+    async function fetchCountries() {
+      const response = await fetch("https://restcountries.com/v2/name/portugal")
+      const countries = await response.json()
+
+      country.innerText = `Country: ${countries[0].name}`
+      region.innerText = `Region: ${countries[0].region}`
+      population.innerText = `Population: ${countries[0].population}`
+      currency.innerText = `Currency: ${countries[0].currencies[0].name}`
+      language.innerText = `Language: ${countries[0].languages[0].name}`
+
+      fetch("https://restcountries.com/v2/name/brasil")
+    }
+    fetchCountries()
+  </script>
+
+</body>
+
+</html>

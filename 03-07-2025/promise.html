@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Image</title>
+  <style>
+    div {
+      width: 3em;
+      height: 3em;
+    }
+  </style>
+</head>
+
+<body>
+  <p id="country"></p>
+  <p id="region"></p>
+  <p id="population"></p>
+  <p id="currency"></p>
+  <p id="language"></p>
+
+
+  <script>
+    const country = document.getElementById("country")
+    const region = document.getElementById("region")
+    const population = document.getElementById("population")
+    const currency = document.getElementById("currency")
+    const language = document.getElementById("language")
+
+    fetch("https://restcountries.com/v2/name/portugal")
+      .then(response => {
+        return response.json()
+      })
+      .then(response => {
+        country.innerText = `country: ${response[0].name}`
+        region.innerText = `region: ${response[0].region}`
+        population.innerText = `population: ${response[0].population}`
+        currency.innerText = `currency: ${response[0].currencies[0].name}`
+        language.innerText = `language: ${response[0].languages[0].name}`
+      })
+    console.log('Fiz o request')
+
+    country.innerText = `country:`
+    region.innerText = `region:`
+    population.innerText = `population:`
+    currency.innerText = `currency:`
+    language.innerText = `language:`
+
+    fetch("https://restcountries.com/v2/name/brasil")
+  </script>
+
+</body>
+
+</html>

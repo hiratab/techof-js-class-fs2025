@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>jQuery</title>
+  <style>
+    .hide {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>jQuery</h1>
+
+  <img id="boat" src="./images/boat.png" />
+  <div>
+    <button id="hide-button">Hide</button>
+    <button id="hide-button-jquery">Hide jQuery</button>
+    <button id="add-class-button">Add Hide Class</button>
+    <button id="remove-class-button">Remove Hide Class</button>
+    <button id="toggle-class-button">Toggle Hide Class</button>
+  </div>
+
+  <div>
+    <button id="fade-out-button">Fade Out</button>
+    <button id="fade-in-button">Fade In</button>
+  </div>
+  
+  <div>
+    <button id="chain-button">Chain</button>
+  </div>
+
+  <p>CDN = Content Deliery Network</p>
+
+  <ul id="users">
+    
+  </ul>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+    document.getElementById("hide-button").addEventListener('click', () => {
+      document.getElementById("boat").style.display = 'none'
+    })
+
+    $("#hide-button-jquery").click(function () {
+      $("#boat").toggle()
+    })
+
+    $("#fade-out-button").click(function () {
+      $("#boat").fadeOut(500)
+    })
+
+    $("#fade-in-button").click(function () {
+      $("#boat").fadeIn(500)
+    })
+
+    $.get(
+      'https://jsonplaceholder.typicode.com/posts',
+      function (posts) {
+        posts.forEach(post => {
+          const li = $('<li></li>').text(post.title)
+          $("#users").append(li)
+        })
+      }
+    )
+
+    $("#add-class-button").click(function () {
+      $("#boat").addClass('hide')
+    })
+
+    $("#remove-class-button").click(function () {
+      $("#boat").removeClass('hide')
+    })
+
+    $("#toggle-class-button").click(function () {
+      $("#boat").toggleClass('hide')
+    })
+
+    $("#chain-button").click(function () {
+      $("#boat")
+        .removeClass('hide')
+        .css('width', '3em')
+        .css('height', '3em')
+        .fadeOut(3000)
+        .fadeIn(3000)
+        .slideUp(3000)
+        .slideDown(3000)
+        .css('width', '6em')
+        .css('height', '6em')
+    })
+  </script>
+</body>
+
+</html>

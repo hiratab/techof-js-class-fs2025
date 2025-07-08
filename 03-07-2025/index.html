@@ -44,9 +44,11 @@
 
     function ultraSlowFunction() {
       return new Promise(function (resolve, reject) {
-        setTimeout(() => {
+        const timeout = setTimeout(() => {
           reject()
         }, 5000)
+        clearTimeout(timeout)
+        resolve()
       })
     }
 
